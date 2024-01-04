@@ -6,7 +6,7 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+        
 
         <!--font-family-->
 		<link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&amp;subset=devanagari,latin-ext" rel="stylesheet">
@@ -462,11 +462,11 @@
                 <div class="col-md-offset-1 col-md-5 col-sm-6">
                     <div class="single-contact-box">
                         <div class="contact-form">
-                            <form id="submit-form">
+                            <form id="submit-form" novalidate >
                                 <div class="row">
                                     <div class="col-sm-6 col-xs-12">
                                         <div class="form-group">
-                                            <input type="text" class="form-control" id="name" placeholder="Name*" name="name" required>
+                                            <input type="text" class="form-control" id="name" placeholder="Name" name="name" required>
 											<span class="error-message" id="name-error"></span>
                                         </div><!--/.form-group-->
                                     </div><!--/.col-->
@@ -474,7 +474,7 @@
                                 <div class="row">
                                     <div class="col-sm-6 col-xs-12">
                                         <div class="form-group">
-                                            <input type="email" class="form-control" id="email" placeholder="Email*" name="email" required>
+                                            <input type="email" class="form-control" id="email" placeholder="Email" name="email" required>
 											<span class="error-message" id="email-error"></span>
                                         </div><!--/.form-group-->
                                     </div><!--/.col-->

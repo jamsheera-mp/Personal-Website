@@ -561,9 +561,10 @@ span.single-timeline-horizontal.spacial-horizontal-line {
         11. Contact
 --------------------------------------*/
 
-.form-group .error-message {
+.form-group .error-message ,.name-error,.subject-error,.subject-error{
     color: red;
     font-size: 12px;
+    
 }
 .contact {
     background: #f9fbfd;

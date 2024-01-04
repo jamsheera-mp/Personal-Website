@@ -1,6 +1,7 @@
 // Function to validate email using a regular expression
 function validateEmail(email) {
-  var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  var emailRegex =  
+  /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
   return emailRegex.test(email);
 }
 
@@ -24,7 +25,7 @@ document.addEventListener('DOMContentLoaded', function () {
       var name = document.getElementById('name').value;
       var email = document.getElementById('email').value;
       var subject = document.getElementById('subject').value;
-      var comment = document.getElementById('message').value;
+      var message = document.getElementById('message').value;
 
       // Check if email is valid using the validateEmail function
       if (!validateEmail(email)) {
@@ -38,17 +39,17 @@ document.addEventListener('DOMContentLoaded', function () {
       if (containsNumbers(name)) {
           // Display an alert and an error message next to the name input field
           alert('Please enter a name without numbers.');
-          document.getElementById('name-error').innerText = 'Name cannot contain numbers';
+          document.getElementById('name-error').innerHTML = 'Name cannot contain numbers';
           return false;
       }
 
       // Check other required fields
-      if (name.trim() === '' || subject.trim() === '' || comment.trim() === '') {
+      if (name.trim() === ''||subject.trim() === ''|| message.trim() === '') {
           // Display an alert and error messages next to the required fields
           alert('Please fill out all required fields.');
-          document.getElementById('name-error').innerText = 'This field is required';
-          document.getElementById('subject-error').innerText = 'This field is required';
-          document.getElementById('message-error').innerText = 'This field is required';
+          document.getElementById('name-error').innerHTML = '<span style="color: red;">This field is required</span>';
+          document.getElementById('subject-error').innerHTML= '<span style="color: red;">This field is required</span>';
+          document.getElementById('message-error').innerHTML = '<span style="color: red;">This field is required</span>';
           return false;
       }
 
@@ -65,9 +66,9 @@ document.addEventListener('DOMContentLoaded', function () {
               // Check if the response is successful
               if (response.ok) {
                   // Display a success message, reset the form, and clear the message after 5 seconds
-                  msg.innerHTML = "Message sent successfully";
+                  msg.innerHTML = '<span style="color: green;">Message sent successfully</span>';
                   setTimeout(function () {
-                      msg.innerHTML = "";
+                    msg.innerHTML = '';
                   }, 5000);
                   form.reset();
               } else {
@@ -81,3 +82,10 @@ document.addEventListener('DOMContentLoaded', function () {
           });
   });
 });
+
+
+
+  
+  
+   
+  
